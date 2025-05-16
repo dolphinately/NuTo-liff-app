@@ -12,9 +12,10 @@
   <script>
     liff.init({ liffId: "2007425381-wkobVNoL" })
       .then(() => {
-        document.getElementById("status").textContent = liff.isInClient()
-          ? "เปิดผ่านแอป LINE"
-          : "เปิดผ่าน browser ธรรมดา";
+        if(liff.isInClient()){
+          ocument.getElementById("status").textContent = liff.getProfile();
+        }
+        
       })
       .catch(err => {
         document.getElementById("status").textContent = "เกิดข้อผิดพลาด: " + err;
