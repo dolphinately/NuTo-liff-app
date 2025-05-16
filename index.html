@@ -55,6 +55,10 @@
         alert('Received from iframe:', event.data.data);
       }
     });
+
+    function sayHelloFromIframe(name) {
+        alert("Hello from iframe, " + name + "!");
+      }
   </script>
 
   <iframe src="https://script.google.com/macros/s/AKfycbyi5v9EDjbw4cXtq1thUuxiBcXZKneBJ7Zo32ltDLf7kwGleGfaUZl_TdEPS6c0W21gKg/exec"></iframe>
