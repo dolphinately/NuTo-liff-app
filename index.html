@@ -36,8 +36,6 @@
         document.getElementById("status").textContent = "เกิดข้อผิดพลาด: " + err;
       });
 
-    const token = "sJHmhQuih8rOppeLXg8vjETX+8CYx3csi0dsyrCPbQ0R5lLDmVHuK/BUsR8nGQ7uAOM5VkBUT7DjTZhmaZUeFIVFhEGK+OFMwbWzGSE2WpQlc1E1mp3b43T6ftOERKUc2zqrXAEUau66+tOTYm5R2wdB04t89/1O/w1cDnyilFU="; // ต้องไม่ใช่ LIFF Token
-
     const payload = {
       to: "C9ee2e36149c327dc24e314dfaa01bf6d", // ไอดีผู้ใช้จริงที่มีการแชทกับบอทแล้ว
       messages: [
@@ -48,11 +46,10 @@
       ]
     };
     
-    fetch("https://api.line.me/v2/bot/message/push", {
+    fetch("https://script.google.com/macros/s/AKfycbyi5v9EDjbw4cXtq1thUuxiBcXZKneBJ7Zo32ltDLf7kwGleGfaUZl_TdEPS6c0W21gKg/exec", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer " + token
       },
       body: JSON.stringify(payload)
     })
