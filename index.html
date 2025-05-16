@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>LIFF Page</title>
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+</head>
+<body>
+  <h2>LIFF Test Page</h2>
+  <div id="status">กำลังโหลด...</div>
+
+  <script>
+    liff.init({ liffId: "2007425381-wkobVNoL" })
+      .then(() => {
+        document.getElementById("status").textContent = liff.isInClient()
+          ? "เปิดผ่านแอป LINE"
+          : "เปิดผ่าน browser ธรรมดา";
+      })
+      .catch(err => {
+        document.getElementById("status").textContent = "เกิดข้อผิดพลาด: " + err;
+      });
+  </script>
+</body>
+</html>
