@@ -46,6 +46,15 @@
         })
         .then(res => res.json());
     }
+
+    window.addEventListener('message', function(event) {
+      console.log(event.origin);
+      if(event.origin !== 'https://script.google.com/macros/s/AKfycbyi5v9EDjbw4cXtq1thUuxiBcXZKneBJ7Zo32ltDLf7kwGleGfaUZl_TdEPS6c0W21gKg/exec') return;
+    
+      if(event.data.type === 'fromIframe') {
+        console.log('Received from iframe:', event.data.data);
+      }
+    });
   </script>
 
   <iframe src="https://script.google.com/macros/s/AKfycbyi5v9EDjbw4cXtq1thUuxiBcXZKneBJ7Zo32ltDLf7kwGleGfaUZl_TdEPS6c0W21gKg/exec"></iframe>
